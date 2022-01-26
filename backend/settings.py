@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-xtiw7gh7u^ege*wdy_wd1d(#c13)s7ah_k+bg=x%mpnm+kyc*t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["texasblog.herokuapp.com"]
+ALLOWED_HOSTS = ["blogisiolo.herokuapp.com"]
 
 
 # Application definition
@@ -108,7 +108,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': str(os.path.join(BASE_DIR, "db.sqlite3")),
 #         # 'NAME': BASE_DIR / 'db.sqlite3',
-#     }
+#  
 # }
 DATABASES = {
     'default': {
@@ -179,15 +179,23 @@ MEDIA_URL = '/images/'
 # STATICFILES_DIRS = os.path.join(BASE_DIR, 'frontend/build/static')
 # MEDIA_ROOT = os.path.join(BASE_DIR, '/static/images')
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL ='/static/'
+# STATIC_URL ='/static/'
 #location where django will collect all static files
-STATIC_ROOT= os.path.join(BASE_DIR,'build','staticfiles')
+# STATIC_ROOT= BASE_DIR / 'staticfiles'
 #location where static files will be stored
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'build/static')]
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
-STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'build/static'),
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 django_heroku.settings(locals())
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 SUMMERNOTE_THEME = 'bs4'    # Use Bootstrap4 theme
