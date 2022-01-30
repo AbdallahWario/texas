@@ -17,16 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth.views import LoginView
 from api import views
-from django.conf.urls.static import static
-from django.conf import settings
-
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('',admin.site.urls),
     path('admin/', admin.site.urls),
     path('api/',include('api.urls')),
     path('summernote/', include('django_summernote.urls')),
     path('',TemplateView.as_view(template_name='index.html'))
 
-]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
