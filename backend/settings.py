@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from decouple import config
 from datetime import timedelta
 import dj_database_url
+import dotenv
 
 from pathlib import Path
 
@@ -19,6 +20,11 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 import os
 import django_heroku
+
+dotenv_file = os.path.join(BASE_DIR,".env")
+
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -110,19 +116,24 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #         # 'NAME': BASE_DIR / 'db.sqlite3',
 #  
 # }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME':config('DB_NAME'),
-        'USER':config('USER_NAME'),
-        'PASSWORD':config('PASSWORD'),
-        'HOST':config('HOST'),
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME':config('DB_NAME'),
+#         'USER':config('USER_NAME'),
+#         'PASSWORD':config('PASSWORD'),
+#         'HOST':config('HOST'),
+#         'PORT': '5432',
+#     }
+# }
 
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
+
+# db_from_env = dj_database_url.config(conn_max_age=600)
+# DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -217,3 +228,6 @@ REST_FRAMEWORK = {
 'rest_framework.authentication.SessionAuthentication',
 ),
 }
+
+options =DATABASES['default'].get('OPTIONS',{})
+options.pop('sslmode',None)
