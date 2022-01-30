@@ -35,7 +35,7 @@ SECRET_KEY = 'django-insecure-xtiw7gh7u^ege*wdy_wd1d(#c13)s7ah_k+bg=x%mpnm+kyc*t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["blogisiolo.herokuapp.com"]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -72,13 +72,9 @@ MIDDLEWARE = [
 ]
 
 
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:3000",
-# ]
-
-# CORS_ORIGIN_WHITELIST = (
-#     "http://localhost:3000",
-# )
+CORS_ORIGIN_WHITELIST = (
+    "http://localhost:3000",
+)
 CORS_ALLOW_ALL_ORIGINS = True
 
 
