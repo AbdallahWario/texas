@@ -3,12 +3,15 @@ from django.urls.conf import include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-
+from rest_framework import routers
 from api import views
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
+
+# router = routers.DefaultRouter()
+# router.register(r(),views.api, 'api')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('post_list/',views.post_list),
