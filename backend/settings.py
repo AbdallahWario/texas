@@ -73,7 +73,7 @@ MIDDLEWARE = [
 
 
 CORS_ORIGIN_WHITELIST = (
-    "http://localhost:3000","blogisiolo.herokuapp.com/","isiolotimes.com"
+    "http://localhost:3000","http://blogisiolo.herokuapp.com/","https://blogisiolo.herokuapp.com/","isiolotimes.com"
 )
 CORS_ALLOW_ALL_ORIGINS = True
 
