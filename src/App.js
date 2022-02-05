@@ -33,7 +33,7 @@ function App() {
           <Route path="/articles/">
             <Articles />
           </Route>
-          <Route path="/about">
+          <Route path="http://localhost:8000/api/about">
             <About />
           </Route>
           <Route path="/profile">
