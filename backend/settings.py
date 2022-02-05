@@ -181,29 +181,33 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-# MEDIA_URL = '/images/'
-# STATICFILES_DIRS = [BASE_DIR / 'frontend/build/static']
-# STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
-# STATICFILES_DIRS = os.path.join(BASE_DIR, 'frontend/build/static')
-# MEDIA_ROOT = os.path.join(BASE_DIR, '/static/images')
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# STATIC_URL ='/static/'
-#location where django will collect all static files
-# STATIC_ROOT= BASE_DIR / 'staticfiles'
-#location where static files will be stored
-# STATICFILES_DIRS = [os.path.join(BASE_DIR,'build/static')]
-MEDIA_ROOT=os.path.join(BASE_DIR,'media')
-MEDIA_URL = '/media/'
-# STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
+MEDIA_URL = '/images/'
+STATICFILES_DIRS = [BASE_DIR / 'frontend/build/static']
+STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'frontend/build/static')
+MEDIA_ROOT = os.path.join(BASE_DIR, '/static/images')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL ='/static/'
+# location where django will collect all static files
+STATIC_ROOT= BASE_DIR / 'staticfiles'
+# location where static files will be stored
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'build/static')]
+
+# old 
+
+# MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+# MEDIA_URL = '/media/'
+# # STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'build/static'),
-]
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'build/static'),
+# ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATICFILES_STORAGE ='Whitenoise.storage.CompressedManifestStaticFilesStorage'
+# # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 django_heroku.settings(locals())
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 SUMMERNOTE_THEME = 'bs4'    # Use Bootstrap4 theme
