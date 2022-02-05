@@ -28,7 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "heroku-prebuild": "NODE_ENV=production cd frontend/ && yarn install && yarn build && cd .."
+    "heroku-prebuild": "NODE_ENV=production cd frontend/ &&  npm install && npm build && cd .."
 
   },
   "cacheDirectories": [
