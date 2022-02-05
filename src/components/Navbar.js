@@ -165,6 +165,7 @@ function Navbar(props) {
                         onClick={accountdropdown}
                       >
                         <img
+                        alt=""
                           src={`${i.profile_pic}`}
                           className="account-dropdown-btn-img"
                           onError={() =>

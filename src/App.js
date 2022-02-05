@@ -24,21 +24,21 @@ function App() {
           <Route exact path="/">
             <Index />
           </Route>
-          <Route path="/article/:url">
-            <Article />
-          </Route>
-          <Route path="/category/:id">
-            <Category />
-          </Route>
-          <Route path="/articles/">
-            <Articles />
-          </Route>
-          <Route path="http://localhost:8000/api/about">
-            <About />
-          </Route>
-          <Route path="/profile">
-            <Profile />
-          </Route>
+          <Route path="/article/:url" component={Article} />
+            {/* <Article />
+          </Route> */}
+          <Route path="/category/:id" component={ Category} />
+            {/* <Category />
+          </Route> */}
+          <Route path="/articles/" component={Articles} />
+             {/* <Articles />
+          </Route> */}
+          <Route path="/about" component={About} />
+            {/* <About />
+          </Route> */}
+          <Route path="/profile" component={Profile} />
+            {/* <Profile />
+          </Route> */}
 
           <Route>
             <Page404 />
