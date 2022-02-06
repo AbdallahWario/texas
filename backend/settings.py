@@ -189,9 +189,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, '/static/images')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL ='/static/'
 # location where django will collect all static files
-STATIC_ROOT= BASE_DIR / 'staticfiles'
+# STATIC_ROOT= BASE_DIR / 'staticfiles'
 # location where static files will be stored
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'build/static')]
+# STATICFILES_DIRS = [os.path.join(BASE_DIR,'build/static')]
 
 # old 
 

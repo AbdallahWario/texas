@@ -23,7 +23,7 @@ function About() {
               <p> IsioloTimes.</p>
 
               <p> 
-              Isiolo times bring you the latest and most relvant news from Isiolo County and the ASAL Region
+              Isiolo times bring you the latest and most relevant news from Isiolo County and the ASAL Region
               </p>
 
               <p> WE BRING YOU NEWS RANGING FROM;</p>
