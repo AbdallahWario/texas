@@ -33,7 +33,7 @@ if os.path.isfile(dotenv_file):
 SECRET_KEY = 'django-insecure-xtiw7gh7u^ege*wdy_wd1d(#c13)s7ah_k+bg=x%mpnm+kyc*t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['blogisiolo.herokuapp.com','isiolotimes.com','localhost','127.0.0.1']
 
@@ -183,19 +183,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/images/'
-STATICFILES_DIRS = [    os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [BASE_DIR / 'frontend/build/static']
+STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend/build/static')]
 MEDIA_ROOT = os.path.join(BASE_DIR, '/static/images')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-
-# recent
-# STATIC_URL = '/static/'
-# MEDIA_URL = '/images/'
-# STATICFILES_DIRS = [BASE_DIR / 'frontend/build/static']
-# STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
-# # STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend/build/static')]
-# MEDIA_ROOT = os.path.join(BASE_DIR, '/static/images')
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 
