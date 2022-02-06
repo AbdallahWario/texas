@@ -17,7 +17,7 @@ import dotenv
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().root.root
 import os
 import django_heroku
 
@@ -87,7 +87,7 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join( BASE_DIR / 'build')],
+        'DIRS': [os.path.join( BASE_DIR,  'build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -183,11 +183,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/images/'
-STATICFILES_DIRS = [BASE_DIR / 'build/static']
+# STATICFILES_DIRS = [BASE_DIR / 'build/static']
 STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend/build/static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'build/static')]
 MEDIA_ROOT = os.path.join(BASE_DIR, '/static/images')
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 
