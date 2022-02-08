@@ -13,15 +13,20 @@ from decouple import config
 from datetime import timedelta
 import dj_database_url
 import dotenv
+import mimetypes
+
+
 
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().root.root
+BASE_DIR = Path(__file__).resolve().parent.parent
 import os
 import django_heroku
 
 dotenv_file = os.path.join(BASE_DIR,".env")
+mimetypes.add_type("text/javascript", ".js", True)
+
 
 if os.path.isfile(dotenv_file):
     dotenv.load_dotenv(dotenv_file)

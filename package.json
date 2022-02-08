@@ -30,7 +30,7 @@
     "eject": "react-scripts eject"
   },
   "cacheDirectories": [
-    "frontend/node_modules"
+    "build/node_modules"
   ],
   "engines": {
     "node": "16.13.0",
