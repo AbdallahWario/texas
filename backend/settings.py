@@ -81,8 +81,9 @@ CORS_ORIGIN_WHITELIST = (
     "http://blogisiolo.herokuapp.com","https://blogisiolo.herokuapp.com","https://isiolotimes.com",
     
     )
-CORS_ALLOW_ALL_ORIGINS = True
 
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 # CSRF_TRUSTED_ORIGINS = [
 #     'localhost',
