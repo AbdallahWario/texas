@@ -81,8 +81,9 @@ CORS_ORIGIN_WHITELIST = (
     "http://blogisiolo.herokuapp.com","https://blogisiolo.herokuapp.com","https://isiolotimes.com",
     
     )
-CORS_ALLOW_ALL_ORIGINS = True
 
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 # CSRF_TRUSTED_ORIGINS = [
 #     'localhost',
@@ -193,7 +194,7 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/images/'
 STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_ROOT = os.path.join(BASE_DIR, '/static/images')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 
